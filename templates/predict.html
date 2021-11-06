@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Machine Learning Model on Conspiracy Theories </title>
+    
+    <!--Note this is bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!--
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    -->
+</head>
+
+<body>   
+         <h2> How much of a Conspiracy Theorist are you?? Test Your Luck With Our Prediction Model</h2>
+        <h6 id="instructions">Select your features, "CLICK TO Calculate"</h6>
+        <br>
+
+        <!-- start of selection & prediction form -->
+
+        <div>
+            <form id="selectionForm" action='/predict' class="bg-dark" method="post">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <ul class="list-group bg-dark">
+
+                            <div class="form-input" id="age_input">
+                                <label for="age">Your Age</label>
+                                <span>
+                                    <i class="fa fa-users fa" aria-hidden="true"></i>
+                                </span>
+                                <i>Default value = 1</i>
+                                <select id="age" name='age' value="1">
+                                    <option selected>Please Make A Selection:</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
+                                    <option value="35">35</option>
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+
+                                </select>
+                            <br><br>
+                            <div class="form-input" id="religion_input">
+                                <label for="religion">Your Religion</label>
+                                <span>
+                                    <i class="fa fa-users fa" aria-hidden="true"></i>
+                                </span>
+                                <i>Default value = Agnostic</i>
+                                <select name="religion" id="religion" value="Agnostic">
+                                    <option selected>Please Make A Selection:</option>
+                                    <option value="1">Agnostic</option>
+                                    <option value="2">Atheist</option>
+                                    <option value="3">Buddhist</option>
+                                    <option value="4">Christian (Catholic)</option>
+                                    <option value="5">Christian (Mormon)</option>
+                                    <option value="6">Christian (Protestant)</option>
+                                    <option value="7">Christian (Other)</option>
+                                    <option value="8">Hindu</option>
+                                    <option value="9">Jewish</option>
+                                    <option value="10">Muslim</option>
+                                    <option value="11">Sikh</option>
+                                    <option value="12">Other</option>
+                                
+                                </select>
+                            </input>
+                            <br><br>
+                            <!--
+                            <label for="fam_size">Family Size:</label>
+                            <i>Default value = 1 Child</i>
+                            <select name="fam_size" id="fam_size">
+                                <option value="0">Please Make A Selection:</option>
+                                <option value="1">One Child</option>
+                            </select>
+                            <br><br>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <ul class="list-group bg-dark">
+                            <label for="urban">Urban:</label>
+                            <i>Default value = Urban</i>
+                            <select name="urban" id="urban">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Rural</option>
+                                <option value="2">Suburban</option>
+                                <option value="3">Urban</option>
+                            </select>
+                            <br><br>
+                            <label for="gender">Gender:</label>
+                            <i>Default value = Male</i>
+                            <select name="gender" id="gender">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Other</option>
+                              
+                            </select>
+                            <br><br>
+                            <label for="education">Education:</label>
+                            <i>Default value = Less than high school</i>
+                            <select name="education" id="education">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Less than high school</option>
+                                <option value="2">High School</option>
+                                <option value="3">University Degree</option>
+                                <option value="4">Graduate Degree</option>
+                                
+                            </select>
+                            <br><br>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                      <ul class="list-group bg-dark">
+                          <label for="engnat">English as Native Language?:</label>
+                          <i>Default value = Yes</i>
+                          <select name="engnat" id="engnat">
+                              <option selected>Please Make A Selection:</option>
+                              <option value="1">Yes</option>
+                              <option value="2">No</option>
+                          </select>
+                          <br><br>
+                          <label for="Hand"> Hand Orientation:</label>
+                          <i>Default value = Right</i>
+                          <select name="hand_orientation" id="hand_orientation">
+                              <option selected>Please Make A Selection:</option>
+                              <option value="1">Right</option>
+                              <option value="2">Left</option>
+                              <option value="3">Both</option>
+                            
+                          </select>
+                          <br><br>
+                          <label for="Orientation">Orientation:</label>
+                          <i>Default value = Heterosexual</i>
+                          <select name="Orientation" id="Orientation">
+                              <option selected>Please Make A Selection:</option>
+                              <option value="1">Heterosexual</option>
+                              <option value="2">Bisexual</option>
+                              <option value="3">Homosexual</option>
+                              <option value="4">Asexual</option>
+                              <option value="5">Other</option>
+                              
+                          </select>
+                          <br><br>
+                      </ul>
+                  </div>
+                    <div class="col-sm-3">
+                        <ul class="list-group bg-dark">
+                            <label for="race">Race:</label>
+                            <i>Default value = Asian</i>
+                            <select name="race" id="race">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Asian</option>
+                                <option value="2">Arab</option>
+                                <option value="3">Black</option>
+                                <option value="4">Indigenous Australian/Native America/White</option>
+                                <option value="5">Other</option>
+                            </select>
+                            <br><br>
+                            <label for="voted">Voted?:</label>
+                            <i>Default value = Yes</i>
+                            <select name="voted" id="voted">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>
+                            </select>
+                            <br><br>
+                            
+                            <label for="married">Married?:</label>
+                            <i>Default value = Never Married</i>
+                            <select name="married" id="married">
+                                <option selected>Please Make A Selection:</option>
+                                <option value="1">Never Married</option>
+                                <option value="2">Currently Married</option>
+                                <option value="3">Previously Married</option>
+                            </select>
+                            <br><br> -->
+
+                            
+                            <!-- predition & reset buttons -->
+                            <!-- <input id="predict" type="submit" value="CLICK TO Calculate">
+                            <input id="reset" type="reset" value="reset selections"
+                                onclick="document.getElementById('prediction').innerText=''">
+                        </ul>
+                    </div>
+                    <div class="col-md-3"> -->
+
+                        <!-- adding Polaroid effect to the dummy & prediction result-->
+
+                        <!-- <div id="polaroid" class="polaroid">
+                            <img id="dummy" src="../static/images/aliens.gif">
+                            <div class="container">
+                                <h2 id="prediction">{{ prediction }}</h2>
+                            </div>
+                        </div> -->
+                    <!-- </div> -->
+                </div>
+                <button type='submit' class='btn btn-info'>Submit</button>
+            </form>
+        </div>
+        <br><br>
+    </div>
+    <h3 id="learn">Would you like to learn more about the (GCB) Generic Conspiracisy Beliefs Scale?</h3>
+    <h3><a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2013.00279/full">* Visit the Original Research Article to Learn More *</a></h3>
+    
+    <!-- prediction result without refreshing the entire page -->
+
+    </div>
+
+    <!-- Link to JS file, d3, and plotly-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+
+</html>

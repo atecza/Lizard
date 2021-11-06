@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Machine Learning Model on Conspiracy Theories </title>
+    
+    <!--Note this is bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    
+
+</head>
+
+<!-- <body class="text-light bg-dark"> -->
+<body>   
+        <div class="jumbotron specialjum">
+            <h1 class="display-1" >Are you a Conspiracy Theorist?</h1>
+            <p class="lead">Determining an outcome through the use of machine learning</p>
+            <br></br>
+            <a class="btn btn-info" href="/predict">Predict Yourself</a>
+            <!-- <a href="#" class="button">PREDICT YOURSELF</a> -->
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br><br>
+                <!-- Google slideshow - responsive elements in CSS 
+                <div class="responsive-google-slides">
+                  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTdHJkogkY0tkdhV5SOKJmvHHzPQuNlN87-csbSyKG60HBrvzUO13uedlbzxgoCYOaXXlT9pBVvUh5g/embed?start=false&loop=false&delayms=3000" 
+                    frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
+                -->
+            </div>
+            <div id="description" class="col-sm-6">
+                <br></br>
+                <a> Background of Data:</a><br><br>
+                <ul>
+                    <li>The Generic Conspiracist Beliefs Scale (GCBS) was created for use in researching conspiracy theories. Research had typically measures beliefs in conspiracies by asking questions about specific conspiracy theories. The GCBS attempts to correct problems with this approach by asking broad questions about assumption that are presumed to underlie such beliefs. The GCBS measures an overall score and five facet scores. The scale was developed by Robert Brotherton, Christopher C. French and Alan D. Pickering of Goldsmiths University of London in 2013.</li>
+                    <br>
+                    <li>The group was intrigued by conspiracy theories given the rise of conspiracies across the mainstream over the past 5 years. The group decided it would be interesting to dive into data concerning conspiracy theories to gauge and quantify the types of characteristics of a conspiracy theorist.</li>
+                    <br>
+                    <li>Are there certain characteristics of a conspiracy theorist? (i.e. Educated vs Uneducated)</li>
+                    <br>
+                    <li>Is there a pattern of specific types of answers that lead to a Higher or Lower score?</li>
+                </ul>
+            </div>
+        </div>
+        
+        <br><br><br>
+        <br><br><br>
+
+    <!-- Link to JS file, d3, and plotly-->
+
+    <!-- Jquery & Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="../static/css/style.css"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+
+</html>
